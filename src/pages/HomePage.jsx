@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import Updates from '../components/updates';
 function HomePage() {
   const navigate = useNavigate()
   const login = () =>{
@@ -17,9 +17,11 @@ function HomePage() {
         Learn about personal finance, investing, real estate, 
         cryptocurrency and all things related to finance.
       </p>
-      <p>To learn things about make Login or Sign Up right now!</p>
+      <p>To learn things about money Login or Sign Up right now!</p>
       <button onClick={login}>Login</button><button onClick={signup}>Sign Up</button>
+      {<Updates/>}
         </>
+
     )
 }
 

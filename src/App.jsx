@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 
 import './App.css'
-import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useNavigate, Link } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import SignUpPage from './pages/SignUpPage';
@@ -11,28 +11,46 @@ import DashboardPage from './pages/DashboardPage';
 import Nav from './components/Nav';
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [isOpen, setIsOpen] = useState(true)
+  
+  
+  const [LoggedIn, setLoggedIn] =  useState(localStorage.getItem('LoggedIn') === 'true');
+  
+  useEffect(() => {
+    // Save logged-in state to localStorage
+    localStorage.setItem('LoggedIn', LoggedIn);
+  }, [LoggedIn]);
+
+  // Function to handle login
+  const handleLogin = () => {
+    setLoggedIn(true);
+  };
+
+  // Function to handle logout
+  const handleLogout = () => {
+    
+    setLoggedIn(false);
+    <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
+  };
 
   return (
     <>
       <Router>
-      <div>
-        <h1>Money Knowledge</h1>
-      </div>
+      
+      <h1>Fortune Forge</h1>
+      
       <div className='sidebar'>
-      {isOpen && <Nav isOpen={isOpen}/>}
+      {<Nav LoggedIn={LoggedIn} logout={handleLogout}/>}
       </div>
       <main>
       <section>
         
           <Routes>
           <Route path='/' element={<HomePage/>}/>
-          <Route path='/login' element={<LoginPage/>}/>
-          <Route path='/signup' element={<SignUpPage/>}/>
-          <Route path='/videos' element={<VideosPage/>}/>
+          <Route path='/login' element={<LoginPage login={handleLogin}/>}/>
+          <Route path='/signup' element={<SignUpPage/> }/>
+          <Route path='/videos' element={LoggedIn ? (<VideosPage LoggedIn={LoggedIn}/> ) : (<HomePage/>)}/>
           <Route path='/faq' element={<FAQPage/>}/>
-          <Route path="/dashboard" component={DashboardPage} element={<DashboardPage/>}/>
+          <Route path="/dashboard" element={LoggedIn ? (<DashboardPage LoggedIn={LoggedIn}/> ) : (<HomePage/>)}/> 
 
           </Routes>
           

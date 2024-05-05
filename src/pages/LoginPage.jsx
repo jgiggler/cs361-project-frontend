@@ -2,14 +2,18 @@ import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import Message from '../components/invalid-login-message';
 
-function LoginPage() {
+function LoginPage({login}) {
   const [isCorrect, setisCorrect] = useState(undefined)
   const navigateTo = useNavigate();
   
+
   const [formData, setFormData] = useState({
     username: '',
     password: ''
   });
+  const signup = () =>{
+    navigateTo("/signup")
+  };
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -27,11 +31,12 @@ function LoginPage() {
     
     const data = await response.json();
     console.log(data.message)
-    setIsLoggedIn(true);
-    if (response.status ===200)
-      {setisCorrect(true)
-        navigateTo('/dashboard')}
-      
+    
+    if (response.status ===200){
+      setisCorrect(true);
+      login();
+      navigateTo('/dashboard');
+    }
     else {
       setisCorrect(false)
       navigateTo('/login')
@@ -68,9 +73,14 @@ function LoginPage() {
             onChange={handleChange} 
           />
         </div>
-        <button type="submit">Login</button>
+        <div className='login-stack'>
+        <button className='login-stack' type="submit">Login</button>
+        <button className='login-stack' onClick={signup}>Create an Account</button>
+        </div>
       </form>
+      <p>
       {isCorrect !== undefined && <Message isCorrect={isCorrect}/>}
+      </p>
     </div>
       
         </>

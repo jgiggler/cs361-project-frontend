@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Message({isCorrect, count}){
-    if (!isCorrect){
+    if (isCorrect === false){
 
         return <>
     <p className='message2'> Invalid username or password </p>

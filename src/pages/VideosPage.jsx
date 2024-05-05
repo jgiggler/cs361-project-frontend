@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 
-function VideosPage() {
-    
+function VideosPage({LoggedIn}) {
+  if (LoggedIn === true){
     return (
+    
         <>
         <h2>Videos</h2>
       <p>
@@ -11,7 +12,8 @@ function VideosPage() {
       </p>
       
         </>
-    )
+    );
+};
 }
 
 export default VideosPage;
