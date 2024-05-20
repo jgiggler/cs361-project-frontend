@@ -9,6 +9,7 @@ import FAQPage from './pages/FAQPage';
 import VideosPage from './pages/VideosPage';
 import DashboardPage from './pages/DashboardPage';
 import Nav from './components/Nav';
+import CalcPage from './pages/CalcPage';
 
 function App() {
   
@@ -51,7 +52,7 @@ function App() {
           <Route path='/videos' element={LoggedIn ? (<VideosPage LoggedIn={LoggedIn}/> ) : (<HomePage/>)}/>
           <Route path='/faq' element={<FAQPage/>}/>
           <Route path="/dashboard" element={LoggedIn ? (<DashboardPage LoggedIn={LoggedIn}/> ) : (<HomePage/>)}/> 
-
+          <Route path='/calculator' element={LoggedIn ? (<CalcPage LoggedIn={LoggedIn}/> ) : (<HomePage/>)}/>
           </Routes>
           
       

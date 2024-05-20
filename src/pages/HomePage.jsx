@@ -18,7 +18,8 @@ function HomePage() {
         cryptocurrency and all things related to finance.
       </p>
       <p>To learn things about money Login or Sign Up right now!</p>
-      <button onClick={login}>Login</button><button onClick={signup}>Sign Up</button>
+      <button className='login-stack' onClick={login}>Login</button>
+      <button className='login-stack' onClick={signup}>Sign Up</button>
       {<Updates/>}
         </>
 
