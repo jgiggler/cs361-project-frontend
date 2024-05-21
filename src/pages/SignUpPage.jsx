@@ -36,7 +36,7 @@ function SignUpPage() {
     e.preventDefault();
     const confirmed = window.confirm("Are you sure you want to make an account?\n Be sure to check our Terms & Conditions")
     if (confirmed) {
-    console.log('Form submitted with:', formData);
+    console.log('Form submitted');
     } else {
       console.log('Form submission cancelled.');
     }
@@ -80,6 +80,7 @@ function SignUpPage() {
             type="text" 
             id="username" 
             name="username" 
+            required
             value={formData.username} 
             onChange={handleChange} 
           />
@@ -90,6 +91,7 @@ function SignUpPage() {
             type="email" 
             id="email" 
             name="email" 
+            required
             value={formData.email} 
             onChange={handleChange} 
           />
@@ -100,6 +102,7 @@ function SignUpPage() {
             type="password" 
             id="password" 
             name="password" 
+            required
             value={formData.password} 
             onChange={handleChange} 
           />

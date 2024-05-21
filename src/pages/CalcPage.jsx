@@ -23,7 +23,8 @@ function CalcPage() {
             .then(response => response.json())
             .then(data => {
                 //backend data
-                setconverted_amount(data.amount)
+
+                setconverted_amount(data.amount.toFixed(2))
                 console.log(data.amount)
             }
           )
@@ -34,11 +35,33 @@ function CalcPage() {
 
     return (
         <>
+        <p>Here you can learn about currency conversion. You can take any currency and convert it to another currency and see the exchange rate.</p>
+        <p>Currency options</p>
         <form method='POST' id="convertForm">
         <label htmlFor="from_currency" >From currency: </label>
-        <input type="text" name="from_currency" id="from_currency" rows = "1" placeholder = "from currency"/>
+        <select name="from_currency" id="from_currency">
+        <option value="AUD">AUD (Australian Dollar)</option>
+        <option value="CAD">CAD (Canadian Dollar)</option>
+        <option value="CHF">CHF (Swiss Franc)</option>
+        <option value="CNY">CNY (Chinese Yuan Renminbi)</option>
+        <option value="EUR">EUR (Euro)</option>
+        <option value="GBP">GBP (British Pound Sterling)</option>
+        <option value="JPY">JPY (Japanese Yen)</option>
+        <option value="USD" selected="selected">USD (United States Dollar)</option>  
+        </select>
+        
         <label htmlFor="to_currency" >To currency: </label>
-        <input type='text' name="to_currency" id='to_currency'  rows="1" placeholder='to currency'/>
+        <select name="to_currency" id="to_currency">
+        <option value="AUD">AUD (Australian Dollar)</option>
+        <option value="CAD">CAD (Canadian Dollar)</option>
+        <option value="CHF">CHF (Swiss Franc)</option>
+        <option value="CNY">CNY (Chinese Yuan Renminbi)</option>
+        <option value="EUR">EUR (Euro)</option>
+        <option value="GBP">GBP (British Pound Sterling)</option>
+        <option value="JPY">JPY (Japanese Yen)</option>
+        <option value="USD">USD (United States Dollar)</option>
+        </select>
+        
         <label htmlFor="amount" >Amount: </label>
         <input type='text' name="amount" id='amount'  rows="1" placeholder='amount'/>
         

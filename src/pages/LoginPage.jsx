@@ -59,6 +59,7 @@ function LoginPage({login}) {
             type="text" 
             id="username" 
             name="username" 
+            required
             value={formData.username} 
             onChange={handleChange} 
           />
@@ -69,6 +70,7 @@ function LoginPage({login}) {
             type="password" 
             id="password" 
             name="password" 
+            required
             value={formData.password} 
             onChange={handleChange} 
           />
