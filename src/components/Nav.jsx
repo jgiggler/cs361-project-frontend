@@ -39,6 +39,7 @@ function Nav({LoggedIn, logout}) {
           <a className="socials" href='http://linkedIn.com'>LinkedIn</a>
           </div>
           <footer>&copy; Joel Gilger</footer>
+          
       </nav>
     );
   }

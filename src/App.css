@@ -31,9 +31,19 @@
   display: block;
 }
 .sidebar .social-box {
-  padding-top: 350px;
   display: flex;
+  position: absolute;
   justify-content: center;
+  width: 100%;
+  bottom: 60px;
+  
+}
+.sidebar footer{
+
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+
 }
 .sidebar .socials {
   font-size: 10px;
