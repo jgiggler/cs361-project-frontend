@@ -35,7 +35,7 @@ function LoginPage({login}) {
     if (response.status ===200){
       setisCorrect(true);
       login();
-      navigateTo('/Stocks');
+      navigateTo('/');
     }
     else {
       setisCorrect(false)

@@ -50,7 +50,7 @@ function CalcPage() {
         <option value="USD" selected="selected">USD (United States Dollar)</option>  
         </select>
         
-        <label htmlFor="to_currency" >To currency: </label>
+        <label htmlFor="to_currency" > To currency: </label>
         <select name="to_currency" id="to_currency">
         <option value="AUD">AUD (Australian Dollar)</option>
         <option value="CAD">CAD (Canadian Dollar)</option>
@@ -61,12 +61,12 @@ function CalcPage() {
         <option value="JPY">JPY (Japanese Yen)</option>
         <option value="USD">USD (United States Dollar)</option>
         </select>
-        
-        <label htmlFor="amount" >Amount: </label>
+        <p></p>
+        <label htmlFor="amount" > Amount: </label>
         <input type='text' name="amount" id='amount'  rows="1" placeholder='amount'/>
         
 
-        <button onClick={handleSubmit} type='submit'>Enter</button>
+        <button className='calc_submit' onClick={handleSubmit} type='submit'>Enter</button>
         </form>
 
         {converted_amount !== null && converted_amount !== undefined ? (

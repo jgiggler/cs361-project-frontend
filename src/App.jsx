@@ -46,7 +46,7 @@ function App() {
       <section>
         
           <Routes>
-          <Route path='/' element={<HomePage/>}/>
+          <Route path='/' element={<HomePage LoggedIn={LoggedIn}/>}/>
           <Route path='/login' element={<LoginPage login={handleLogin}/>}/>
           <Route path='/signup' element={<SignUpPage/> }/>
           <Route path='/videos' element={LoggedIn ? (<VideosPage LoggedIn={LoggedIn}/> ) : (<HomePage/>)}/>

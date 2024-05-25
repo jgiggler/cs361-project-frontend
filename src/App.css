@@ -152,6 +152,8 @@ h1 {
   margin-top: 15px;
 }
 
+
+
 table {
   border: 2px black solid;
   width: 100%;
@@ -195,7 +197,14 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-
+#convertForm{
+  overflow: auto;
+  justify-self: auto;
+}
+.calc_submit{
+  margin-left: 15px;
+  margin-bottom: 20px;
+}
 button {
   font-family: 'Arial', sans-serif;
   font-size: 20px;
