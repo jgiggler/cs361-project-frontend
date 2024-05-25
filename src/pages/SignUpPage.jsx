@@ -54,7 +54,7 @@ function SignUpPage() {
     }
     else {
       setisCorrect(true)
-      navigateTo('/dashboard')
+      navigateTo('/Stocks')
     }
     } catch (error) 
       {console.error('Login failed:', error);

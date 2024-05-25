@@ -7,7 +7,7 @@ import LoginPage from './pages/LoginPage';
 import SignUpPage from './pages/SignUpPage';
 import FAQPage from './pages/FAQPage';
 import VideosPage from './pages/VideosPage';
-import DashboardPage from './pages/DashboardPage';
+import StocksPage from './pages/StocksPage';
 import Nav from './components/Nav';
 import CalcPage from './pages/CalcPage';
 
@@ -51,7 +51,7 @@ function App() {
           <Route path='/signup' element={<SignUpPage/> }/>
           <Route path='/videos' element={LoggedIn ? (<VideosPage LoggedIn={LoggedIn}/> ) : (<HomePage/>)}/>
           <Route path='/faq' element={<FAQPage/>}/>
-          <Route path="/dashboard" element={LoggedIn ? (<DashboardPage LoggedIn={LoggedIn}/> ) : (<HomePage/>)}/> 
+          <Route path="/Stocks" element={LoggedIn ? (<StocksPage LoggedIn={LoggedIn}/> ) : (<HomePage/>)}/> 
           <Route path='/calculator' element={LoggedIn ? (<CalcPage LoggedIn={LoggedIn}/> ) : (<HomePage/>)}/>
           </Routes>
           

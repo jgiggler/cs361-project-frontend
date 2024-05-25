@@ -15,7 +15,7 @@ function Nav({LoggedIn, logout}) {
       <nav className='sidebar'>
           
           <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
-          <Link to="/dashboard" onClick={() => setIsOpen(false)}>Dashboard</Link>
+          <Link to="/Stocks" onClick={() => setIsOpen(false)}>Stocks</Link>
           <Link to="/videos" onClick={() => setIsOpen(false)}>Videos</Link>
           <Link to='/calculator' onClick={() => setIsOpen(false)}>Calculator</Link>
           <Link to="/faq" onClick={() => setIsOpen(false)}>FAQ</Link>
