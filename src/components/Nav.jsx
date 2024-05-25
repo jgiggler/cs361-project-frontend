@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 function Nav({LoggedIn, logout}) {
@@ -19,7 +19,7 @@ function Nav({LoggedIn, logout}) {
           <Link to="/videos" onClick={() => setIsOpen(false)}>Videos</Link>
           <Link to='/calculator' onClick={() => setIsOpen(false)}>Calculator</Link>
           <Link to="/faq" onClick={() => setIsOpen(false)}>FAQ</Link>
-          <button onClick={handleLogout}>Logout Now</button>
+          <button className='logout' onClick={handleLogout}>Logout Now</button>
           <div className='social-box'>
           <a className="socials" href='http://twitter.com'>Twitter</a>
           <a className="socials" href='http://linkedIn.com'>LinkedIn</a>
